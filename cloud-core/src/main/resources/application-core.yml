@@ -1,0 +1,8 @@
+async:
+  executor:
+    thread:
+      core_pool_size: 8
+      max_pool_size: 8
+      queue_capacity: 16
+      name:
+        prefix: async_service-

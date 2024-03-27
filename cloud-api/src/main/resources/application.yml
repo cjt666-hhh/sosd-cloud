@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: core
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    name: defaultDataSource
+    url: jdbc:mysql://localhost:3306/blue?serverTimezone=UTC
+    username: '***'
+    password: '***'
+server:
+  port: 8080
+dubbo:
+  application:
+    logger: slf4j
+    name: CloudApplication
+  registry:
+    address: nacos://doc.fzuhuahuo.cn:8848
+    parameters:
+      namespace: fcb22382-0d79-4e3e-8a97-7db657a1d6f5
+  protocol:
+    name: dubbo
+    port: -1
