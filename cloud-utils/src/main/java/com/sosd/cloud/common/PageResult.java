@@ -11,7 +11,6 @@ public class PageResult<T> {
 
     public PageResult(int total, int code, T data, String msg) {
         this.total = total;
-
         this.code = code;
         this.data = data;
         this.msg = msg;

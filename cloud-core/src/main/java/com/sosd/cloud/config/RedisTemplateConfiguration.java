@@ -30,9 +30,9 @@ public class RedisTemplateConfiguration {
 
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
-// 创建JavaTimeModule实例
+        // 创建JavaTimeModule实例
         JavaTimeModule javaTimeModule = new JavaTimeModule();
-// 定义LocalDateTime的序列化和反序列化格式
+        // 定义LocalDateTime的序列化和反序列化格式
         DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
         javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(formatter));
         javaTimeModule.addDeserializer(LocalDateTime.class, new LocalDateTimeDeserializer(formatter));
