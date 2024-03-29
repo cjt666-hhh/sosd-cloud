@@ -1,17 +1,6 @@
 spring:
   profiles:
-    active: core,database
-
+    active: core,database,cloud
 server:
   port: 8080
-dubbo:
-  application:
-    logger: slf4j
-    name: '***'
-  registry:
-    address: '***'
-    parameters:
-      namespace: '***'
-  protocol:
-    name: dubbo
-    port: -1
+

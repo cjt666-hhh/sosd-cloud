@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 @EnableDubbo
 @MapperScan("com.sosd.cloud.mapper")
-
 public class CloudApplication {
 
     public static void main(String[] args) {

@@ -1,0 +1,15 @@
+dubbo:
+  application:
+    logger: slf4j
+    name: dubbo-service
+  registry:
+    address: nacos://81.71.2.123:8848
+    parameters:
+      namespace: fcb22382-0d79-4e3e-8a97-7db657a1d6f5
+  protocol:
+    name: dubbo
+    port: -1
+csp:
+  sentinel:
+    dashboard:
+      server: 81.71.2.123:8080
