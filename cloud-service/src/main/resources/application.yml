@@ -6,7 +6,7 @@ spring:
     username: '***'
     password: '***'
 server:
-  port: 8080
+  port: 8083
 dubbo:
   application:
     logger: slf4j

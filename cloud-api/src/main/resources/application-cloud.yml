@@ -9,7 +9,8 @@ dubbo:
   protocol:
     name: dubbo
     port: -1
+
 csp:
   sentinel:
     dashboard:
-      server: 81.71.2.123:8080
+      server: localhost:8080

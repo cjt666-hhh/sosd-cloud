@@ -19,7 +19,7 @@ class CloudApplicationTests {
     RedisDemo redisDemo;
     @Test
     void dubboTest() {
-        demoService.hello("花火");
+        System.out.println(demoService.hello("花火"));
     }
     @Test
     void redisTest() {

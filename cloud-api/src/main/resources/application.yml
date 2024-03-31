@@ -2,5 +2,5 @@ spring:
   profiles:
     active: core,database,cloud
 server:
-  port: 8080
+  port: 8081
 
