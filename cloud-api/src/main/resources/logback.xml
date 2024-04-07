@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 修改日志目录为 "log" -->
+    <property name="LOG_HOME" value="log" />
+    <timestamp key="currentDate" datePattern="yyyy-MM-dd"/>
+    <property name="LOG_DIR" value="${currentDate}" />
+
+    <!-- INFO 日志配置 -->
+    <appender name="INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/${LOG_DIR}/info.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd } [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/${LOG_DIR}/info.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!-- 这里的时间格式不需要改变，因为它是用于滚动策略的 -->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+    </appender>
+
+    <!-- WARN 日志配置 -->
+    <appender name="WARN" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/${LOG_DIR}/warn.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/${LOG_DIR}/warn.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
+        </filter>
+    </appender>
+
+    <!-- ERROR 日志配置 -->
+    <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/${LOG_DIR}/error.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/${LOG_DIR}/error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="INFO" />
+        <appender-ref ref="WARN" />
+        <appender-ref ref="ERROR" />
+    </root>
+</configuration>
