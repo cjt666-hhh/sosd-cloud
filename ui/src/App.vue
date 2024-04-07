@@ -5,6 +5,9 @@ const isregister=ref(true)
 </script>
 
 <template>
+  <div>
+    test
+  </div>
   <el-row class="login-page">
     <el-col :span="12" class="background"></el-col>
     <el-col :span="6" :offset="3" class="form">
